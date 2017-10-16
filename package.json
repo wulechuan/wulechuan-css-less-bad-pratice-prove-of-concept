@@ -1,0 +1,19 @@
+{
+  "name": "wulechuan-try-lesscss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "source/index.less",
+  "dependencies": {
+    "less": "^3.0.0-alpha.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "lessc source/index.less build/index.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lesscss"
+  ],
+  "author": "wulechuan<wulechuan@live.com>",
+  "license": "WTFPL"
+}

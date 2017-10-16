@@ -1,0 +1,28 @@
+@import "button-public-mixins";
+@import "button-class-definition";
+
+// 公共变量 ---------------------------------------------
+@button-class-base-name: wlc-button;
+
+// .definitions-loader(@definition-mixin-name) {
+//     ~"@{definition-mixin-name}()";
+// }
+
+.fake-button {
+    .mixin-button();
+}
+
+.theme-1 {
+    .@{button-class-base-name} {
+        .theme-1-palette();
+        // .definitions-loader(wlc-button-definition)
+        @wlc-button-definition();
+    }
+}
+
+// .theme-2 {
+//     .@{button-class-base-name} {
+//         .theme-2-palette();
+//         @wlc-button-definition();
+//     }
+// }

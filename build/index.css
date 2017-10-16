@@ -1,0 +1,5 @@
+.mixin-button {
+  box-sizing: border-box;
+  height: 36px;
+  min-width: 100px;
+}
