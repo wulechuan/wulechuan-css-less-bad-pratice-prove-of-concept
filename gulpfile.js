@@ -1,5 +1,6 @@
 const gulp = require('gulp')
 const runTaskSequence = require('gulp-sequence')
+const streamCombiner = require('stream-combiner2')
 const deleteFiles = require('del')
 const renameFiles = require('gulp-rename')
 const lesscss = require('gulp-less')
@@ -15,9 +16,19 @@ gulp.task('build html', () => {
 })
 
 gulp.task('build css', () => {
-    return gulp.src('./source/styles/index.less')
-        .pipe(lesscss())
-        .pipe(gulp.dest('./build/'))
+    const combinedStream = streamCombiner.obj([
+        gulp.src('./source/styles/index.less'),
+        lesscss(),
+        gulp.dest('./build/')
+    ])
+
+    combinedStream.on('error', error => {
+        console.error('\n'+'='.repeat(64))
+        console.error(error)
+        console.error('='.repeat(64)+'\n')
+    })
+
+    return combinedStream
 })
 
 gulp.task('build', (onThisTaskEnd) => runTaskSequence(
