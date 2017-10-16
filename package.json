@@ -4,12 +4,16 @@
   "description": "",
   "main": "source/index.less",
   "dependencies": {
-    "less": "^3.0.0-alpha.3"
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.2",
+    "gulp-sequence": "^0.4.6",
+    "less": "^2.7.2"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "lessc source/index.less build/index.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "lessc": "lessc source/index.less build/index.css"
   },
   "keywords": [
     "lesscss"

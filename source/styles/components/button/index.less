@@ -12,6 +12,14 @@
 //     .mixin-button();
 // }
 
+& {
+    .@{button-class-base-name} {
+        .theme-1-palette();
+        // .definitions-loader(wlc-button-definition)
+        @wlc-button-definition();
+    }
+}
+
 .theme-1 {
     .@{button-class-base-name} {
         .theme-1-palette();
