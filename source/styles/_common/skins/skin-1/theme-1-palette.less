@@ -1,7 +1,11 @@
 .theme-1-palette() {
     @color-primary: @color-brand-green;
-    @color-primary-1: tint(@color-brand-blue, 60%);
+    @color-primary-1: tint(@color-primary, 80%);
+    @color-error: #f66;
     
     @color-button-text: @color-primary;
-    @color-button-bgrd: transparent;
+    @color-button-bgrd: @color-primary-1;
+
+    @color-button-dangerous-text: @color-error;
+    @color-button-dangerous-bgrd: tint(@color-error, 80%);
 }

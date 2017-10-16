@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const runTaskSequence = require('gulp-sequence')
 const deleteFiles = require('del')
+const renameFiles = require('gulp-rename')
 const lesscss = require('gulp-less')
 
 gulp.task('clear old build', () => {
@@ -8,8 +9,9 @@ gulp.task('clear old build', () => {
 })
 
 gulp.task('build html', () => {
-    return gulp.src('./source/index.html')
-        .pipe(gulp.dest('./build/'))
+    return gulp.src('./source/demo.html')
+    .pipe(renameFiles({ basename: 'index' }))
+    .pipe(gulp.dest('./build'))
 })
 
 gulp.task('build css', () => {
@@ -18,10 +20,10 @@ gulp.task('build css', () => {
         .pipe(gulp.dest('./build/'))
 })
 
-gulp.task('build', runTaskSequence(
+gulp.task('build', (onThisTaskEnd) => runTaskSequence(
     'clear old build',
     ['build html', 'build css']
-))
+)(onThisTaskEnd))
 
 gulp.task('start watching files', () => {
     return gulp.watch('source/**/*', ['build']);
