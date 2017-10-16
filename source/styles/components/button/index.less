@@ -7,29 +7,36 @@
 // .definitions-loader(@definition-mixin-name) {
 //     ~"@{definition-mixin-name}()";
 // }
-.theme-2-palette();
-.wlc-fake-button {
-    .mixin-button();
-}
-.theme-1-palette();
 
 & {
+    .theme-1-palette();
+    .wlc-fake-button {
+        .mixin-button();
+    }
+
     .@{button-class-base-name} {
-        .theme-1-palette();
         @wlc-button-definition();
     }
 }
 
 .theme-1 {
+    .theme-1-palette();
+    .wlc-fake-button {
+        .mixin-button();
+    }
+
     .@{button-class-base-name} {
-        .theme-1-palette();
         @wlc-button-definition();
     }
 }
 
 .theme-2 {
+    .theme-2-palette();
+    .wlc-fake-button {
+        .mixin-button();
+    }
+
     .@{button-class-base-name} {
-        .theme-2-palette();
         @wlc-button-definition();
     }
 }
