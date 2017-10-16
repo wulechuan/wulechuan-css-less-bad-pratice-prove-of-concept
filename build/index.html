@@ -6,8 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>wulechuan tries out lesscss</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        article {
+            width: 300px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body class="theme-1">
-    <button class="wlc-button">sample button</button>
+    <article>
+        <section>
+            <button class="wlc-button">Button Default</button>
+        </section>
+        <section class="theme-1">
+            <button class="wlc-button">Button Theme 1</button>
+        </section>
+        <section class="theme-2">
+            <button class="wlc-button">Button Theme 2</button>
+        </section>
+    </article>
 </body>
 </html>

@@ -1,13 +1,17 @@
 .mixin-button() {
     box-sizing: border-box;
+    display: inline-block;
     height: 50px;
-    min-width: 100px;
+    min-width: 250px;
+    padding: 2px 10px;
+    margin: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: @button-border-radius;
 
     font-size: @button-font-size;
 
     color: @color-button-text;
     border-color: currentColor;
     background-color: @color-button-bgrd;
-
-    border-radius: @button-border-radius;
 }
