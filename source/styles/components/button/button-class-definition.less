@@ -1,7 +1,15 @@
-@wlc-button-definition: {
+@wlc-button-all-definitions: {
     .mixin-button();
+
+    &-primary {
+        .mixin-button-primary();
+    }
 
     &-dangerous {
         .mixin-button-dangerous();
+    }
+
+    &-hollow {
+        .mixin-button-hollow();
     }
 };

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <style>
         article {
-            width: 500px;
+            width: 1024px;
             margin: auto;
         }
         h2 {
@@ -23,21 +23,33 @@
     <article>
         <section>
             <h2>Default Theme</h2>
-            <button class="wlc-button">Button Default</button>
+            <button class="wlc-button">No Theme: Button Default</button>
+            <button class="wlc-button wlc-button-primary">No Theme: Button Primary</button>
+            <button class="wlc-button wlc-button-primary" disabled>No Theme: Button Primary [Disabled]</button>
             <button class="wlc-button wlc-button-dangerous">Button Default Error</button>
-            <span class="wlc-fake-button">Looks Like a Button</span>
+            <button class="wlc-button wlc-button-primary wlc-button-hollow">No Theme: Button Primary Hollow</button>
+            <button class="wlc-button wlc-button-primary wlc-button-hollow" disabled>No Theme: Button Primary Hollow [Disabled]</button>
+            <div class="psuedo-component-that-uses-button"><span class="wlc-fake-button">Looks Like a Button</span></div>
         </section>
         <section class="theme-1">
             <h2>Theme 1</h2>
-            <button class="wlc-button">Button Theme 1</button>
-            <button class="wlc-button wlc-button-dangerous">Button Theme 1 Error</button>
-            <span class="wlc-fake-button">Looks Like a Button</span>
+            <button class="wlc-button">Theme 1: Button Default</button>
+            <button class="wlc-button wlc-button-primary">Theme 1: Button Primary</button>
+            <button class="wlc-button wlc-button-primary" disabled>Theme 1: Button Primary [Disabled]</button>
+            <button class="wlc-button wlc-button-dangerous">Theme 1: Button Error</button>
+            <button class="wlc-button wlc-button-primary wlc-button-hollow">Theme 1: Button Primary Hollow</button>
+            <button class="wlc-button wlc-button-primary wlc-button-hollow" disabled>Theme 1: Button Primary Hollow [Disabled]</button>
+            <div class="psuedo-component-that-uses-button"><span class="wlc-fake-button">Theme 1: Looks Like a Button</span></div>
         </section>
         <section class="theme-2">
             <h2>Theme 2</h2>
-            <button class="wlc-button">Button Theme 2</button>
-            <button class="wlc-button wlc-button-dangerous">Button Theme 2 Error</button>
-            <span class="wlc-fake-button">Looks Like a Button</span>
+            <button class="wlc-button">Theme 2: Button</button>
+            <button class="wlc-button wlc-button-primary">Theme 2: Button Primary</button>
+            <button class="wlc-button wlc-button-primary" disabled>Theme 2: Button Primary [Disabled]</button>
+            <button class="wlc-button wlc-button-dangerous">Theme 2: Button Error</button>
+            <button class="wlc-button wlc-button-primary wlc-button-hollow">Theme 2: Button Primary Hollow</button>
+            <button class="wlc-button wlc-button-primary wlc-button-hollow" disabled>Theme 2: Button Primary Hollow [Disabled]</button>
+            <div class="psuedo-component-that-uses-button"><span class="wlc-fake-button">Theme 2: Looks Like a Button</span></div>
         </section>
     </article>
 </body>
