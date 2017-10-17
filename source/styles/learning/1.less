@@ -1,7 +1,9 @@
 @var: 1;
 
+@import '2';
+
 .a1 {
-    value: @var; // 1
+    value: @var; // 1 -> two
 }
 
 & {
@@ -51,7 +53,7 @@
 
 .y1 {
     @y();
-    value: @var; // 1
+    value: @var; // 1 -> two
 }
 
 .c {
@@ -63,7 +65,7 @@
         @var: 3;
 
         .n1 {
-            .n(); // 1
+            .n(); // 1 -> two
         }
 
         .n3 {
