@@ -38,17 +38,28 @@
 
     &:hover,
     &:focus {
-        .set-button-colors(null; darken(@background, 5%));
+        .set-button-colors(null; darken(@background, 10%));
     }
 
     &.active,
     &:active {
-        .set-button-colors(null, darken(@background, 5%));
+        .set-button-colors(null, darken(@background, 10%));
     }
 
     .mixin-ant-design-button-filled-status-disabled();
 }
 
+.mixin-button-variant-hollow(@bgrd-color-to-fade: transparent) {
+    background-color: transparent;
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: fade(@bgrd-color-to-fade, 20%);
+    }
+
+    .mixin-ant-design-button-hollow-status-disabled();
+}
 
 
 
@@ -56,8 +67,12 @@
 .mixin-button-primary() {
     .mixin-ant-design-button-variant-primary(
         @color-button-primary-text;
-        @color-button-primary-bgrd
-    )
+        @color-button-primary-bgrd;
+    );
+
+    &.wlc-button-hollow {
+        .mixin-button-variant-hollow(@color-button-primary-bgrd);    
+    }
 }
 
 .mixin-button-dangerous() {
@@ -67,20 +82,12 @@
     &:active,
     &:focus,
     &:hover {
-        background-color: darken(@color-button-dangerous-bgrd, 5%);
-    }
-}
-
-.mixin-button-hollow() {
-    background-color: transparent;
-
-    &:active,
-    &:focus,
-    &:hover {
-        background-color: transparent;
+        background-color: darken(@color-button-dangerous-bgrd, 7%);
     }
 
-    .mixin-ant-design-button-hollow-status-disabled();
+    &.wlc-button-hollow {
+        .mixin-button-variant-hollow(@color-button-dangerous-bgrd);    
+    }
 }
 
 
@@ -107,6 +114,8 @@
     // color: @color-button-text;
     border-color: currentColor;
     // background-color: @color-button-bgrd;
+
+    transition: all 0.45s ease-out;
 
     &,
     &:active,
