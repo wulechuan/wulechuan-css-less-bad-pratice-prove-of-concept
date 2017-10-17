@@ -6,7 +6,10 @@ const renameFiles = require('gulp-rename')
 const lesscss = require('gulp-less')
 
 gulp.task('clear old build', () => {
-    return deleteFiles('./build/')
+    return deleteFiles([
+        './build/index.html',
+        './build/index.css'
+    ])
 })
 
 gulp.task('build html', () => {
