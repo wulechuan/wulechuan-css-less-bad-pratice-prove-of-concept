@@ -5,7 +5,24 @@
 
 // @hero-value: component-1-index;
 
-.component-1 {
-    hero: @hero-value;
-   .component-1-class-def();
+.skin-custom-theme-1 {
+    @import "skin-custom-palette-1";
+
+    .component-1 {
+        hero: @hero-value;
+        weapon: @weapon-value;
+        
+        .component-1-class-def();
+    }
+}
+
+.skin-custom-theme-2 {
+    @import "skin-custom-palette-2";
+
+    .component-1 {
+        hero: @hero-value;
+        weapon: @weapon-value;
+    
+        .component-1-class-def();
+    }
 }
