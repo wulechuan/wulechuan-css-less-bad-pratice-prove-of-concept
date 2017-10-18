@@ -14,8 +14,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "gulp",
-    "lessc": "lessc source/styles/index.less build/index.css"
+    "start": "gulp"
+    , "lessc1": "lessc source/styles/index.less build/demo-pages/index.css"
+    , "lessc2": "lessc source/styles-researching/really-terrible-theme-system-from-ant-design/all-components.less /build/styles-researching/really-terrible-theme-system-from-ant-design/components.css"
   },
   "keywords": [
     "lesscss"

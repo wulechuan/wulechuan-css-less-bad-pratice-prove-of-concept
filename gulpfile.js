@@ -37,7 +37,12 @@ gulp.task('build css demo', () => {
 
 gulp.task('build css researching', () => {
     const combinedStream = streamCombiner.obj([
-        gulp.src('./source/styles-researching/*/index.less'),
+        gulp.src([
+            './source/styles-researching/*/index.less'
+            , './source/styles-researching/*/all-components.less'
+            // , './source/styles-researching/*/component-1-index.less'
+            // , './source/styles-researching/*/component-2-index.less'
+        ]),
         lesscss(),
         gulp.dest('./build/styles-researching')
     ])
