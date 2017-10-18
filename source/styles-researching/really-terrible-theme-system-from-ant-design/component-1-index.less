@@ -3,18 +3,29 @@
 @import "so-called-commonly-shared-mixins";
 @import "component-1-class-definitions";
 
-.skin-custom-theme-1 {
-    @hero-value: @hero-1;
-    @weapon-value: @weapon-1;
-    @component-1-definitions();
-}
+& { // 必须。如果省略，则本组件的样式依旧没问题，但此代码块内的语句会污染到全局。
 
-.skin-custom-theme-2 {
-    @hero-value: @hero-2;
-    @weapon-value: @weapon-2;
-    @component-1-definitions();
-}
+    // 下面两行必须裸露！不可以用&包裹起来，即，不可以用作用域（Scope）。
+    @import "skin-custom-palette-2";
+    @component-1-definitions(); // 必须用mixin！不可以用变量，即，不可以用@开头的语句。
 
-// .____less-value-checker-ARGUMENT-component-definitions-variable {
-//     -argum-: @component-definitions-variable;
-// }
+    // 主题1
+    .skin-custom-theme-1 {
+        // @hero-value: @hero-1;
+        // @weapon-value: @weapon-1;
+        @import "skin-custom-palette-1";
+        @component-1-definitions(); // 必须用变量，即，必须用@开头的语句。不可以用mixin！
+    }
+
+    // 主题2   
+    .skin-custom-theme-2 {
+        // @hero-value: @hero-2;
+        // @weapon-value: @weapon-2;
+        @import "skin-custom-palette-2";
+        @component-1-definitions(); // 必须用变量，即，必须用@开头的语句。不可以用mixin！
+    }
+
+    // .____less-value-checker-ARGUMENT-component-definitions-variable {
+    //     -argum-: @component-definitions-variable;
+    // }
+}
