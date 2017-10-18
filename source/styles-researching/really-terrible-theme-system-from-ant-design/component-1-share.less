@@ -1,6 +1,6 @@
 // @hero-value: component-1-share;
 
-.component-1-share() {
+@component-1-share: {
     // .____less-value-checker-component-1-share {
     //     --hero--: @hero-value;
     //     -weapon-: @weapon-value;
@@ -8,4 +8,9 @@
 
     --hero--: @hero-value;
     -weapon-: @weapon-value;
+};
+
+.component-1-share() {
+    --hero--: @hero-value aaa;
+    -weapon-: @weapon-value aaa;
 }

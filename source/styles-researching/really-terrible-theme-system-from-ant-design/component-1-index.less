@@ -1,6 +1,24 @@
 @import "ant-desgin-so-called-index-is-in-fact-a-base-rules-collection";
 @import "skin-index";
 @import "so-called-commonly-shared-mixins";
-@import "component-1-class-definitions";
 
-.apply-custom-skin-to(@component-1-definitions);
+.1() {
+    @theme-keyword-1: custom;
+    @theme-keyword-2: 1;
+    @import "component-1-class-definitions";
+    .component-1-definitions(@theme-keyword-1, @theme-keyword-2);
+}
+
+.2() {
+    @theme-keyword-1: custom;
+    @theme-keyword-2: 2;
+    @import "component-1-class-definitions";
+    .component-1-definitions(@theme-keyword-1, @theme-keyword-2);
+}
+
+.1();
+.2();
+
+// .____less-value-checker-ARGUMENT-component-definitions-variable {
+//     -argum-: @component-definitions-variable;
+// }

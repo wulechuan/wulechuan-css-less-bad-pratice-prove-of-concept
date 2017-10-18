@@ -1,12 +1,25 @@
 // @hero-value: component-1-class-def;
 
-@component-1-definitions: {
-    // .____less-value-checker-omponent-1-class-def {
-    //     --hero--: @hero-value;
-    //     -weapon-: @weapon-value;
+.component-1-definitions(@theme-keyword-1; @theme-keyword-2) {
+    // .____less-value-checker-component-1-definitions-mixin {
+    //     -key-word-1-: @theme-keyword-1;
+    //     -key-word-2-: @theme-keyword-2;
     // }
 
-    .component-1 {
-        .component-1-share();
+    .theme-@{theme-keyword-1}-@{theme-keyword-2} {
+        @importing-path: "skin-@{theme-keyword-1}-palette-@{theme-keyword-2}";
+
+        // .____less-value-checker-importing-path {
+        //     -path-: @importing-path;
+        // }
+
+        .component-1 {
+            @import "@{importing-path}";
+            .____less-value-checker-component-1-definitions-mixin {
+                --hero--: @hero-value;
+                -weapon-: @weapon-value;
+            }
+            @component-1-share();
+        }
     }
-};
+}
