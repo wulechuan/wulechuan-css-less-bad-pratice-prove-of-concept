@@ -7,22 +7,39 @@ const lesscss = require('gulp-less')
 
 gulp.task('clear old build', () => {
     return deleteFiles([
-        './build/index.html',
-        './build/index.css'
+        './build/demo-pages/index.html',
+        './build/demo-pages/index.css',
+        './build/styles-researching/'
     ])
 })
 
 gulp.task('build html', () => {
     return gulp.src('./source/demo.html')
     .pipe(renameFiles({ basename: 'index' }))
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./build/demo-pages'))
 })
 
-gulp.task('build css', () => {
+gulp.task('build css demo', () => {
     const combinedStream = streamCombiner.obj([
         gulp.src('./source/styles/index.less'),
         lesscss(),
-        gulp.dest('./build/')
+        gulp.dest('./build/demo-pages')
+    ])
+
+    combinedStream.on('error', error => {
+        console.error('\n'+'='.repeat(64))
+        console.error(error)
+        console.error('='.repeat(64)+'\n')
+    })
+
+    return combinedStream
+})
+
+gulp.task('build css researching', () => {
+    const combinedStream = streamCombiner.obj([
+        gulp.src('./source/styles-researching/*/index.less'),
+        lesscss(),
+        gulp.dest('./build/styles-researching')
     ])
 
     combinedStream.on('error', error => {
@@ -36,7 +53,7 @@ gulp.task('build css', () => {
 
 gulp.task('build', (onThisTaskEnd) => runTaskSequence(
     'clear old build',
-    ['build html', 'build css']
+    ['build html', 'build css demo', 'build css researching']
 )(onThisTaskEnd))
 
 gulp.task('start watching files', () => {
