@@ -1,4 +1,4 @@
-# 吴乐川试玩Lesscss。
+# 吴乐川试玩Lesscss
 
 ## zh-CN
 
@@ -7,4 +7,3 @@
 ## en-US
 
 I hate lesscss. I recommand Stylus (http://stylus-lang.com).
-

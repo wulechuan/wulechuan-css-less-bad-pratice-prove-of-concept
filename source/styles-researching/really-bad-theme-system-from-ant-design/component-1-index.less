@@ -1,11 +1,8 @@
 @import "component-1-class-def";
 
-@hero: t-component-1-index;
-
-.less-check-component-1-index {
-    hero: @hero;
-}
+// @hero-value: component-1-index;
 
 .component-1 {
+    hero: @hero-value;
    .less-check-component-1-share();
 }
