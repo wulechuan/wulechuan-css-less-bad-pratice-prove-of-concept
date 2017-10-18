@@ -3,43 +3,4 @@
 @import "so-called-commonly-shared-mixins";
 @import "component-1-class-definitions";
 
-// @hero-value: component-1-index;
-
-& {
-    @import "skin-custom-palette-1";
-
-    .component-1 {
-        // .____less-value-checker-component-1-theme-1 {
-        //     --hero--: @hero-value;
-        //     -weapon-: @weapon-value;
-        // }
-        
-        .component-1-class-definitions();
-    }
-}
-
-.skin-custom-theme-1 {
-    @import "skin-custom-palette-1";
-
-    .component-1 {
-        // .____less-value-checker-component-1-theme-1 {
-        //     --hero--: @hero-value;
-        //     -weapon-: @weapon-value;
-        // }
-        
-        .component-1-class-definitions();
-    }
-}
-
-.skin-custom-theme-2 {
-    @import "skin-custom-palette-2";
-
-    .component-1 {
-        // .____less-value-checker-component-1-theme-2 {
-        //     --hero--: @hero-value;
-        //     -weapon-: @weapon-value;
-        // }
-    
-        .component-1-class-definitions();
-    }
-}
+.apply-custom-skin-to(@component-1-definitions);

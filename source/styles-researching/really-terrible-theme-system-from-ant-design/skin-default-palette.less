@@ -5,3 +5,37 @@
 //     --hero--: @hero-value;
 //     -weapon-: @weapon-value;
 // }
+
+.apply-custom-skin-to(@component-definitions) {
+    .____less-value-checker-apply-custom-skin-to {
+        --hero--: @hero-value;
+        -weapon-: @weapon-value;
+    }
+
+    & {
+        @import "skin-custom-palette-1";
+        .____less-value-checker-apply-custom-skin-to-0 {
+            --hero--: @hero-value;
+            -weapon-: @weapon-value;
+        }
+        @component-definitions();
+    }
+    
+    .skin-custom-theme-1 {
+        @import "skin-custom-palette-1";
+        .____less-value-checker-apply-custom-skin-to-1 {
+            --hero--: @hero-value;
+            -weapon-: @weapon-value;
+        }
+        @component-definitions();
+    }
+    
+    .skin-custom-theme-2 {
+        @import "skin-custom-palette-2";
+        .____less-value-checker-apply-custom-skin-to-2 {
+            --hero--: @hero-value;
+            -weapon-: @weapon-value;
+        }
+        @component-definitions();
+    }
+}
