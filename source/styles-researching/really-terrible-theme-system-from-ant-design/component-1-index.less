@@ -1,31 +1,14 @@
 @import "ant-desgin-so-called-index-is-in-fact-a-base-rules-collection";
-@import "skin-index";
+@import "skin-custom-index";
 @import "so-called-commonly-shared-mixins";
 @import "component-1-class-definitions";
 
-& { // 必须。如果省略，则本组件的样式依旧没问题，但此代码块内的语句会污染到全局。
+& {
+    @current-component-class-base-name: ~".component-1";
+    @current-component-definitions: @component-1-definitions-variable;
+    .apply-custom-skin-to-current-component-definitions();
 
-    // 下面两行必须裸露！不可以用&包裹起来，即，不可以增设作用域（Scope）。
-    @import "skin-custom-palette-2";
-    @component-1-definitions(); // 必须用mixin！不可以用变量，即，不可以用@开头的语句。
-
-    // 主题1
-    .skin-custom-theme-1 {
-        // @hero-value: @hero-1;
-        // @weapon-value: @weapon-1;
-        @import "skin-custom-palette-1";
-        @component-1-definitions(); // 必须用变量，即，必须用@开头的语句。不可以用mixin！
+    .____less-value-checker-component-1-index {
+        -component-class-base-name-: "@{current-component-class-base-name}";
     }
-
-    // 主题2   
-    .skin-custom-theme-2 {
-        // @hero-value: @hero-2;
-        // @weapon-value: @weapon-2;
-        @import "skin-custom-palette-2";
-        @component-1-definitions(); // 必须用变量，即，必须用@开头的语句。不可以用mixin！
-    }
-
-    // .____less-value-checker-ARGUMENT-component-definitions-variable {
-    //     -argum-: @component-definitions-variable;
-    // }
 }

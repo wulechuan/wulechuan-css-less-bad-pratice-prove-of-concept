@@ -1,16 +1,15 @@
 @import 'ant-desgin-so-called-index-is-in-fact-a-base-rules-collection';
-@import 'skin-index';
+@import 'skin-custom-index';
 @import "so-called-commonly-shared-mixins";
 @import 'component-1-share';
+@import 'component-2-class-definitions';
 
-// @hero-value: component-2-index;
-// @weapon-value: component-2-index;
+& {
+    @current-component-class-base-name: ~".component-2";
+    @current-component-definitions: @component-2-definitions-variable;
+    .apply-custom-skin-to-current-component-definitions();
 
-.component-2 {
-    // --hero--: @hero-value;
-    // -weapon-: @weapon-value;
-
-    .member-that-looks-like-component-1 {
-        .component-1-share();
+    .____less-value-checker-component-2-index {
+        -component-class-base-name-: "@{current-component-class-base-name}";
     }
 }
