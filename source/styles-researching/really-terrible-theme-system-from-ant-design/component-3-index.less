@@ -1,0 +1,10 @@
+// 假定component-3是尚未来得及重构的组件，因此本文件中故意不调用.apply-custom-skin-to-current-component-definitions();
+
+@import 'ant-desgin-so-called-index-is-in-fact-a-base-rules-collection';
+@import "so-called-commonly-shared-mixins";
+
+.component-3 {
+    -whoami-: "I am the third component. 并且我还没有被重构。";
+    --hero--: @hero-value;
+    -weapon-: @weapon-value;
+}
