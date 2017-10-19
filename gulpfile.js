@@ -40,7 +40,7 @@ gulp.task('build css researching', () => {
         gulp.src([
             './source/styles-researching/*/index.less'
             // , './source/styles-researching/*/all-components.less'
-            , './source/styles-researching/*/skin-index.less'
+            , './source/styles-researching/*/skins-index.less'
             // , './source/styles-researching/*/component-1-index.less'
             // , './source/styles-researching/*/component-2-index.less'
         ]),
